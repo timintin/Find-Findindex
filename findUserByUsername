@@ -1,0 +1,13 @@
+function findUserByUsername(users, username) {
+    return users.find(user => user.username === username);
+}
+
+// Test cases
+const users = [
+    {username: 'mlewis'},
+    {username: 'akagen'},
+    {username: 'msmith'}
+];
+
+console.log(findUserByUsername(users, 'mlewis'));  // {username: 'mlewis'}
+console.log(findUserByUsername(users, 'taco'));    // undefined
