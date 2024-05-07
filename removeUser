@@ -1,13 +1,17 @@
-function findUserByUsername(users, username) {
-    return users.find(user => user.username === username);
+Write a function called extractValue which accepts an array of objects and a key and returns a new array with the value of each object at the keyfunction removeUser(users, username) {
+    const index = users.findIndex(user => user.username === username);
+    if (index !== -1) {
+        return users.splice(index, 1)[0]; // Remove the user and return the removed object
+    }
+    return undefined; // Return undefined if no user is found
 }
 
-// Test cases
+// Test data
 const users = [
     {username: 'mlewis'},
     {username: 'akagen'},
     {username: 'msmith'}
 ];
 
-console.log(findUserByUsername(users, 'mlewis'));  // {username: 'mlewis'}
-console.log(findUserByUsername(users, 'taco'));    // undefined
+console.log(removeUser(users, 'akagen')); // {username: 'akagen'}
+console.log(removeUser(users, 'akagen')); // undefined
