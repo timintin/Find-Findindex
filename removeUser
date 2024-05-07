@@ -1,4 +1,4 @@
-Write a function called extractValue which accepts an array of objects and a key and returns a new array with the value of each object at the keyfunction removeUser(users, username) {
+function removeUser(users, username) {
     const index = users.findIndex(user => user.username === username);
     if (index !== -1) {
         return users.splice(index, 1)[0]; // Remove the user and return the removed object
